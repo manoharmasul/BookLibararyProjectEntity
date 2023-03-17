@@ -2,6 +2,8 @@
 using LibararyProjectEntity.Model;
 using LibararyProjectEntity.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace LibararyProjectEntity.Repository
 {
@@ -45,6 +47,25 @@ namespace LibararyProjectEntity.Repository
                         };
             var booklist = await query.ToListAsync();
             return booklist;
+        }
+
+        public async Task<LibraryGet> GetBooksById(long Id)
+        {
+            var query=from books in context.Library
+                      join auth in context.Authorcc on books.AuthorId equals auth.Id
+                      join lang in context.LanguageModels on books.LanguageId equals lang.Id
+                      join cate in context.tblCategory on books.CategoryId equals cate.Id                  
+                      where books.IsDeleted==false && books.Id== Id select new LibraryGet
+                      {
+                         Id = books.Id,
+                         BookName = books.BookName,
+                         AuthorName = auth.AuthorName,
+                         Category = cate.Category,
+                         Language = lang.Language
+                      };
+            var book= await query.FirstOrDefaultAsync();
+
+            return book;
         }
 
         public async Task<List<LibraryGet>> SearchBook(string searchtext)

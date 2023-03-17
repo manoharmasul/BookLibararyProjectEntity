@@ -9,5 +9,6 @@ namespace LibararyProjectEntity.Repository.Interface
         Task<List<LibraryGet>> GetAllBooks();
         Task<List<LibraryGet>> SearchBook(string searchtext);
         Task<List<LibraryGet>>  SearchBooksFilter(string? searchtext);
+        Task<LibraryGet>  GetBooksById(long Id);
     }
 }

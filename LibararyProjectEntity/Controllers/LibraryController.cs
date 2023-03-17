@@ -44,5 +44,11 @@ namespace LibararyProjectEntity.Controllers
             var result = await libraryasync.SearchBooksFilter(searchtext);
             return Ok(result);
         }
+        [HttpGet("GetById")]
+        public async Task<IActionResult> GetById(long Id)
+        {
+            var result = await libraryasync.GetBooksById(Id);
+            return Ok(result);
+        }
     }
 }
