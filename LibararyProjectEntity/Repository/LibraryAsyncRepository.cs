@@ -70,6 +70,7 @@ namespace LibararyProjectEntity.Repository
 
         public async Task<List<LibraryGet>> SearchBooksFilter(string? searchtext)
         {
+            long counter = 1;
             if (searchtext == null)
             {
                 searchtext = "";
@@ -83,6 +84,7 @@ namespace LibararyProjectEntity.Repository
 
                         select new LibraryGet
                         {
+                          
                             Id = books.Id,
                             BookName = books.BookName,
                             AuthorName = auth.AuthorName,

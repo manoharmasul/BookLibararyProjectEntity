@@ -28,6 +28,6 @@ namespace LibararyProjectEntity.Model
         public string BookName { get; set; }
         public string AuthorName { get; set; }
         public string Category { get; set; }
-        public string Language { get; set; }
+        public string Language { get; set; }    
     }
 }

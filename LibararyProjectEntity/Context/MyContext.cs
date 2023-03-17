@@ -14,5 +14,6 @@ namespace LibararyProjectEntity.Context
         public DbSet<Library> Library { get; set; }
         public DbSet<LanguageModel> LanguageModels { get; set; }
         public DbSet<tblCategory> tblCategory { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }
