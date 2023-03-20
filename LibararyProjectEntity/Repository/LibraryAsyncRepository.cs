@@ -23,6 +23,7 @@ namespace LibararyProjectEntity.Repository
             library.CategoryId = libraryAdd.CategoryId;
             library.LanguageId = libraryAdd.LanguageId;
             library.CreatedBy = libraryAdd.CreatedBy;
+            library.CreatedDate =DateTime.Now;
             library.ModifiedBy = 0;
             var query = context.AddAsync(library);
             var result = await context.SaveChangesAsync();
