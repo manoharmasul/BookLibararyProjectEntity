@@ -25,7 +25,7 @@ namespace LibararyProjectEntity.Repository
                         {
                             Id= books.Id,
                             BookName = library.BookName,
-                            UserName = user.UserName,
+                            IssueTo = user.UserName,
                             IssueDate = books.IssueDate,
                             ReturnDate = books.ReturnDate,
                             CreatedBy = books.CreatedBy,
@@ -47,7 +47,7 @@ namespace LibararyProjectEntity.Repository
                         {
                             Id = books.Id,
                             BookName = library.BookName,
-                            UserName = user.UserName,
+                            IssueTo = user.UserName,
                             IssueDate = books.IssueDate,
                             ReturnDate = books.ReturnDate,
                             CreatedBy = books.CreatedBy,
@@ -70,7 +70,7 @@ namespace LibararyProjectEntity.Repository
                         {
                             Id = books.Id,
                             BookName = library.BookName,
-                            UserName = user.UserName,
+                            IssueTo = user.UserName,
                             IssueDate = books.IssueDate,
                             ReturnDate = books.ReturnDate,
                             CreatedBy = books.CreatedBy,
