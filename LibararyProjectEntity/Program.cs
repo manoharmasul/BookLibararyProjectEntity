@@ -15,6 +15,7 @@ builder.Services.AddDbContext<MyContext>(options =>
 builder.Services.AddScoped<IAuthorAsyncRepository, AuthorAsyncRepository>();
 builder.Services.AddScoped<ILibraryAsyncRepository, LibraryAsyncRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IBookIssueDetailsAsync, BookIssueDetailsAsync>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
